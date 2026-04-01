@@ -1,0 +1,20 @@
+### 请在这里输入你要发送的邮箱
+### 三个#为注释，不会被读取
+### 支持缩进
+
+
+### eg：
+
+### group1：
+    
+    ### mail1：
+    xxxx@xxxx.com
+    
+    ### mail2：
+    yyyy@yyyy.com
+    
+### group2： 
+    
+    ### mail3：
+    zzzz@zzzz.com
+    
