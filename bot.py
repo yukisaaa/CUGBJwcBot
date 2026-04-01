@@ -8,7 +8,6 @@ import datetime
 from bs4 import BeautifulSoup
 from requests.api import get
 from mail import sendEmail
-from getFooter import getFooterTxt
 
 
 class bot_log:
@@ -31,7 +30,6 @@ class bot_log:
 
 #
 log_ = bot_log()
-getFooterTxt()
 
 # jwc网址
 url = 'https://jwc.cugb.edu.cn/xszq/'
@@ -56,7 +54,7 @@ try:
     for item in text:
         alr.append(item)
     output = open(filepath, "w", encoding="utf-8")
-    newmsg = []
+    newmessage = []
     bl = False
     for item in data:
         temp = item.get_text().split("\n")
@@ -68,13 +66,13 @@ try:
         ss = str(result)
         output.write(ss + "\n")
         if ss not in alr:
-            newmsg.append(result)
+            newmessage.append(result)
             bl = True
     mail = ""
     if bl:
         print("有新通知")
         cnt = 1
-        for i in newmsg:
+        for i in newmessage:
             mail += str(cnt) + ":\n"
             cnt += 1
             mail += "标题：" + i["text"] + "\n"
